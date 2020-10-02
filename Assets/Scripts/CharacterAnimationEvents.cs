@@ -20,4 +20,14 @@ public class CharacterAnimationEvents : MonoBehaviour
     {
         character.SetState(Character.State.RunningFromEnemy);
     }
+
+    void Hit()
+    {
+        character.HitEnemy();
+    }
+
+    void Hurt()
+    {
+        character.Hurt();
+    }
 }
