@@ -52,6 +52,10 @@ public class Character : MonoBehaviour
     [ContextMenu("Attack")]
     void AttackEnemy()
     {
+        if (health <= 0)
+        {
+            return;
+        }
         switch (weapon) {
             case Weapon.Fist:
             case Weapon.Bat:
