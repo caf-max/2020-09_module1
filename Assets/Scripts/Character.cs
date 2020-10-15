@@ -52,7 +52,7 @@ public class Character : MonoBehaviour
     [ContextMenu("Attack")]
     void AttackEnemy()
     {
-        if (health <= 0)
+        if (health <= 0 || target.health <= 0)
         {
             return;
         }
