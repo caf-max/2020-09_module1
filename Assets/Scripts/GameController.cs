@@ -4,15 +4,23 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public string wonLabel;
+    public string lostLabel;
+    public TextMeshProUGUI endHeader;
+    public CanvasGroup menuPanel;
     public CanvasGroup buttonPanel;
+    public CanvasGroup endGamePanel;
     public Button button;
     public Character[] playerCharacter;
     public Character[] enemyCharacter;
     Character currentTarget;
     bool waitingForInput;
+    bool isPause;
 
     Character FirstAliveCharacter(Character[] characters)
     {
@@ -27,11 +35,34 @@ public class GameController : MonoBehaviour
     void PlayerWon()
     {
         Debug.Log("Player won.");
+        endHeader.text = wonLabel;
+        Utility.SetCanvasGroupEnabled(buttonPanel, false);
+        Utility.SetCanvasGroupEnabled(endGamePanel, true);
     }
 
     void PlayerLost()
     {
         Debug.Log("Player lost.");
+        endHeader.text = lostLabel;
+        Utility.SetCanvasGroupEnabled(buttonPanel, false);
+        Utility.SetCanvasGroupEnabled(endGamePanel, true);
+    }
+
+    public void PauseGame()
+    {
+        isPause = !isPause;
+        Utility.SetCanvasGroupEnabled(buttonPanel, !isPause);
+        Utility.SetCanvasGroupEnabled(menuPanel, isPause);
+    }
+
+    public void ReloadGame()
+    {
+        LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToMainMenu()
+    {
+        LoadingScreen.instance.LoadScene("MainMenu");
     }
 
     bool CheckEndGame()
@@ -121,7 +152,10 @@ public class GameController : MonoBehaviour
     {
         button.onClick.AddListener(PlayerAttack);
         Utility.SetCanvasGroupEnabled(buttonPanel, false);
+        Utility.SetCanvasGroupEnabled(menuPanel, false);
+        Utility.SetCanvasGroupEnabled(endGamePanel, false);
         StartCoroutine(GameLoop());
+        isPause = false;
     }
 
     // Update is called once per frame
