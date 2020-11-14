@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2703eb2b94cab4fb29e687e60f65bc0f, type: 3}
+  m_Name: AudioData
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: battle
+    clip: {fileID: 8300000, guid: 118d78934601343ec8987fcc9eaf68a0, type: 3}
+    audioMixerGroup: {fileID: -4163502945765898219, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: detectiv
+    clip: {fileID: 8300000, guid: 923f772602b70429fa1b442f3c4cef21, type: 3}
+    audioMixerGroup: {fileID: -4163502945765898219, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: easy
+    clip: {fileID: 8300000, guid: 828bdbe88fee34451b3c31a642756d91, type: 3}
+    audioMixerGroup: {fileID: -4163502945765898219, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: die1
+    clip: {fileID: 8300000, guid: 848679540c34846bc88c3aa23476e3a1, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: die2
+    clip: {fileID: 8300000, guid: f19a4f0b190a74b9582358df33de1af0, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: die3
+    clip: {fileID: 8300000, guid: b225944f9ed224d2cabf5f4d935c53f1, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: hand
+    clip: {fileID: 8300000, guid: 7f86f7daff9304fc68d961e56894ae01, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: shoot
+    clip: {fileID: 8300000, guid: 9ab8b0b79a218472f9bbe259da41d06f, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: standart
+    clip: {fileID: 8300000, guid: a08b6382fb6634ebcaf3fc34e3892f3a, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: damage_long
+    clip: {fileID: 8300000, guid: 8a5a64c25467f46d79da75c12c138b10, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: damage_short
+    clip: {fileID: 8300000, guid: 843b9ebbdbd77443b8fc138573257c0a, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: step1
+    clip: {fileID: 8300000, guid: 4e3ea65846b0e45d29268ee94faeb9cb, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: step2
+    clip: {fileID: 8300000, guid: 2a6142e03bc2641c58832c5727a3aef6, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: click
+    clip: {fileID: 8300000, guid: 027bd8eebe6de481aa3920ece96058bb, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: lose
+    clip: {fileID: 8300000, guid: 26400d5af9aac462eacd87a3a8c089c7, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: win
+    clip: {fileID: 8300000, guid: 4d52405cf78f945dbb06a0f2a1fcb3ab, type: 3}
+    audioMixerGroup: {fileID: 6793305262958734307, guid: 5867c81eaca7f43a7ad41de89ac8487c,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0

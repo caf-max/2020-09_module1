@@ -36,6 +36,18 @@ public class LoadingScreen : MonoBehaviour
         }
 
         Utility.SetCanvasGroupEnabled(canvasGroup, false);
+        if (name == "MainMenu")
+        {
+            AudioManager.instance.PlaySound("easy");
+        }
+        else if (name == "Level_1")
+        {
+            AudioManager.instance.PlaySound("battle");
+        }
+        else if (name == "Level_2")
+        {
+            AudioManager.instance.PlaySound("detectiv");
+        }
     }
 
     public void LoadScene(string name)

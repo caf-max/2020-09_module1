@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
         endHeader.text = wonLabel;
         Utility.SetCanvasGroupEnabled(buttonPanel, false);
         Utility.SetCanvasGroupEnabled(endGamePanel, true);
+        AudioManager.instance.PlaySound("win");
     }
 
     void PlayerLost()
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
         endHeader.text = lostLabel;
         Utility.SetCanvasGroupEnabled(buttonPanel, false);
         Utility.SetCanvasGroupEnabled(endGamePanel, true);
+        AudioManager.instance.PlaySound("lose");
     }
 
     public void PauseGame()

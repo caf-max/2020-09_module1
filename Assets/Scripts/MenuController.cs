@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class MenuController : MonoBehaviour
     public CanvasGroup mainScreen;
     public CanvasGroup settingsScreen;
     public CanvasGroup levelScreen;
+    public AudioMixer audioMixer;
+    public Slider music;
+    public Slider sound;
 
     void SetCurrentScreen(Screen screen)
     {
@@ -28,6 +33,11 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         SetCurrentScreen(Screen.Main);
+        _ = audioMixer.GetFloat("musicVolume", out float value1);
+        _ = audioMixer.GetFloat("soundVolume", out float value2);
+        music.value = (value1 + 80) / 100.0f;
+        sound.value = (value2 + 80) / 100.0f;
+        AudioManager.instance.PlaySound("easy");
     }
 
     public void StartNewGame()
@@ -49,6 +59,16 @@ public class MenuController : MonoBehaviour
     public void CloseSettings()
     {
         SetCurrentScreen(Screen.Main);
+    }
+
+    public void MusicChanged(float value)
+    {
+        _ = audioMixer.SetFloat("musicVolume", (value * 100) - 80);
+    }
+
+    public void SoundChanged(float value)
+    {
+        _ = audioMixer.SetFloat("soundVolume", (value * 100) - 80);
     }
 
     public void ExitGame()

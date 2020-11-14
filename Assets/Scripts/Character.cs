@@ -36,6 +36,8 @@ public class Character : MonoBehaviour
     Vector3 originalPosition;
     Quaternion originalRotation;
     Health health;
+    [HideInInspector]
+    public new string audio;
 
     void Start()
     {
@@ -73,6 +75,8 @@ public class Character : MonoBehaviour
         health.ApplyDamage(1.0f); // FIXME: захардкожено
         if (health.current <= 0.0f)
             state = State.BeginDying;
+        else
+            AudioManager.instance.PlaySound("damage_short");
     }
 
     [ContextMenu("Attack")]
@@ -87,14 +91,17 @@ public class Character : MonoBehaviour
 
         switch (weapon) {
             case Weapon.Bat:
+                audio = "standart";
                 state = State.RunningToEnemy;
                 break;
 
             case Weapon.Fist:
+                audio = "hand";
                 state = State.RunningToEnemy;
                 break;
 
             case Weapon.Pistol:
+                audio = "shoot";
                 state = State.BeginShoot;
                 break;
         }
@@ -134,6 +141,7 @@ public class Character : MonoBehaviour
 
             case State.RunningToEnemy:
                 animator.SetFloat("Speed", runSpeed);
+                AudioManager.instance.PlaySound("step1");
                 if (RunTowards(target.position, distanceFromEnemy)) {
                     switch (weapon) {
                         case Weapon.Bat:
@@ -173,6 +181,7 @@ public class Character : MonoBehaviour
 
             case State.RunningFromEnemy:
                 animator.SetFloat("Speed", runSpeed);
+                AudioManager.instance.PlaySound("step2");
                 if (RunTowards(originalPosition, 0.0f))
                     state = State.Idle;
                 break;
@@ -180,6 +189,7 @@ public class Character : MonoBehaviour
             case State.BeginDying:
                 animator.SetTrigger("Death");
                 state = State.Dead;
+                AudioManager.instance.PlaySound("die1");
                 break;
 
             case State.Dead:

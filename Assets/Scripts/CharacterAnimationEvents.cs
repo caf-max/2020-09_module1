@@ -30,5 +30,6 @@ public class CharacterAnimationEvents : MonoBehaviour
     {
         Character targetCharacter = character.target.GetComponent<Character>();
         targetCharacter.DoDamage();
+        AudioManager.instance.PlaySound(character.audio);
     }
 }
